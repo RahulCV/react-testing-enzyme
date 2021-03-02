@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.1",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.4.1",
+    "babel-plugin-react-remove-properties": "^0.3.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.2",
@@ -15,7 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "install:test":"npm i --save-dev babel-plugin-react-remove-properties @wojtekmaj/enzyme-adapter-react-17 enzyme"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "enzyme": "^3.11.0"
   }
 }
