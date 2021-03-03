@@ -1,8 +1,10 @@
 import React from 'react'
 
-function Congats() {
+function Congats(props) {
     return (
-        <div>
+        <div data-test="component-congrats">
+            <span data-test="congrats-message">
+{props.success?'Congratulations! You Gussed the Word!.':''}</span>
             
         </div>
     )
