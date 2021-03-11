@@ -2,10 +2,14 @@ import { render, screen } from '@testing-library/react';
 import Enzyme,{shallow} from 'enzyme';
 import Congats from './Congats';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-import {findByTestAttr} from './testUils';
+import {findByTestAttr,checkProps} from './testUils';
+import checkPropTypes from 'check-prop-types';
+
+const defaultProps  ={success:false};
 Enzyme.configure({ adapter: new Adapter() });
 const  setup = (props={})=>{
-    return shallow(<Congats {...props}/>)
+    const setUpProps = {...defaultProps,...props}
+    return shallow(<Congats {...setUpProps}/>)
 }
 test('Render without error',()=>{
 
@@ -25,3 +29,11 @@ test('Renders non empty congrats message',()=>{
     const message = findByTestAttr(wrapper,'congrats-message')
     expect(message.text().length).not.toBe(0);
 });
+
+test('Does not hrow wari=ning expected props',()=>{
+
+    const expectedProps ={success:false};
+    checkProps(Congats,expectedProps)
+    // const propError = checkPropTypes(Congats.proptypes,expectedProps,'prop', Congats.name);
+    // expect(propError).toBeUndefined();
+})

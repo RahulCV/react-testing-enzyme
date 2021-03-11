@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types';
 function Congats(props) {
     return (
         <div data-test="component-congrats">
@@ -8,6 +8,8 @@ function Congats(props) {
             
         </div>
     )
+};
+Congats.propTypes ={
+    success:PropTypes.bool.isRequired
 }
-
 export default Congats;
