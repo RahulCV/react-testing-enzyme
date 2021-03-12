@@ -1,12 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import Enzyme,{shallow} from 'enzyme';
+import {shallow} from 'enzyme';
 import Congats from './Congats';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import {findByTestAttr,checkProps} from './testUils';
 import checkPropTypes from 'check-prop-types';
 
 const defaultProps  ={success:false};
-Enzyme.configure({ adapter: new Adapter() });
 const  setup = (props={})=>{
     const setUpProps = {...defaultProps,...props}
     return shallow(<Congats {...setUpProps}/>)
