@@ -21,7 +21,7 @@ describe('if there are no words gussed',()=>{
     wrapper = setup({guessedWords:[]})
    })
     test('Render Without error',()=>{
-    const component = findByTestAttr(wrapper,'component-gussed-words')
+    const component = findByTestAttr(wrapper,'component-guessed-words')
     expect(component.length).toBe(1)
    })
 
@@ -32,9 +32,35 @@ describe('if there are no words gussed',()=>{
 })
 
 
+
 })
 
 describe('if there are  words gussed',()=>{
-
+    let guessedWords=[{
+        guessedWord:'train',
+        letterMatchCount:3
+    },{
+        guessedWord:'agile',
+        letterMatchCount:1
+    },{
+        guessedWord:'party',
+        letterMatchCount:5
+    }];
+    let wrapper;
+    beforeEach(()=>{
+     wrapper = setup({guessedWords})
+    })
+    test('render with error',()=>{
+        const component = findByTestAttr(wrapper,'component-guessed-words')
+        expect(component.length).toBe(1)     
+    })
+    test('render guessed words section',()=>{
+        const guessedWordNode = findByTestAttr(wrapper,'guessed-words')
+        expect(guessedWordNode.length).toBe(1)     
+    })
+    test('Correct number of guessed words  ',()=>{
+        const guessedWordNodes = findByTestAttr(wrapper,'guessed-word')
+        expect(guessedWordNodes.length).toBe(guessedWords.length)      
+    })
     
 })
