@@ -4,9 +4,10 @@ import Congats from './Congats';
 import GuessWords from './GuessWords';
 function App() {
   return (
-    <div className="App">
-      <Congats success={false}/>
-    <GuessWords guessedWords={[]}/>
+    <div className="container">
+      Jotto App
+      <Congats success={true}/>
+    <GuessWords guessedWords={[{guessedWord:'train',letterMatchCount:3}]}/>
     </div>
   );
 }
