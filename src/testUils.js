@@ -1,4 +1,14 @@
 import checkPropTypes from 'check-prop-types';
+import {createStore} from 'redux';
+import rootReducer from './redux/reducers/index';
+/**
+ * 
+ * @param {*} initialState 
+ * @returns 
+ */
+export const storeFactory = (initialState)=>{
+   return createStore(rootReducer,initialState);
+}
 /**
  * 
  * @param {*} wrapper 
