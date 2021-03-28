@@ -6,7 +6,7 @@ import Input from './input';
 const setUp = (initialState={})=>{
     const store = storeFactory(initialState);
     const wrapper = shallow(<Input store={store}/>);
-    console.log(wrapper.debug())
+   // console.log(wrapper.debug())
 }
 setUp()
 describe('render',()=>{

@@ -21,6 +21,6 @@ export const findByTestAttr = (wrapper,val)=>{
 }
 export const checkProps= (component,confirmingProps)=>{
 
-   const propError = checkPropTypes(component.propTyps,confirmingProps,'props',component.name)
+   const propError = checkPropTypes(component.propTypes,confirmingProps,'props',component.name)
    expect(propError).toBeUndefined();
 }
