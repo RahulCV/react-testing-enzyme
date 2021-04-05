@@ -11,7 +11,7 @@ const setup = (state={})=>{
         submitBtn.simulate('click',{preventDefault:()=>{}});
         return wrapper;
     }
-    describe('no words guessed',()=>{
+    describe.skip('no words guessed',()=>{
         let wrapper;
         beforeEach(()=>{
             wrapper=setup({
@@ -64,11 +64,12 @@ const setup = (state={})=>{
             const congrats = findByTestAttr(wrapper,'component-congrats');
             expect(congrats.text().length).toBeGreaterThan(0);
         })
-        test('display congrats component ',()=>{
+        test('display congrats component',()=>{
             const submitButton = findByTestAttr(wrapper,'submit-button');
             expect(submitButton.exists()).toBe(false);
 
         })
+        test.todo('just todo');
 
     });
 
